@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head> 
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31",
+    });
+  });
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت آزمایشی</title>
+    <!-- کد جاوااسکریپت OneSignal -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "YOUR_APP_ID",  //   App ID 93d62850-6fdf-4d36-a612-2e738bc39c0c
+        });
+      });
+    </script>
+</head>
+<body>
+    <h1>سلام، این یک سایت آزمایشی است!</h1>
+    <p>این سایت برای تست ارسال نوتیفیکیشن استفاده می‌شود.</p>
+</body>
+</html>
