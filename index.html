@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پروژه نوتیفیکیشن</title>
+  
+  <!-- کد وان سیگنال -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
     OneSignalDeferred.push(async function(OneSignal) {
       await OneSignal.init({
-        appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31", // App ID شما
+        appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31", // App ID پروژه شما
+      });
+    });
+  </script>
+  
+  <!-- کد اضافه‌شده برای درخواست مجوز نوتیفیکیشن -->
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31",  // App ID شما
+        safari_web_id: "", // اگر Safari Web Push فعال باشد، این را تنظیم کنید (اختیاری)
         promptOptions: {
           slidedown: {
-            enabled: true, // فعال کردن پیغام کشویی
-            autoPrompt: true, // درخواست اجازه به صورت خودکار نمایش داده شود
+            enabled: true, // نمایش درخواست مجوز ارسال نوتیفیکیشن
+            autoPrompt: true, // به‌صورت خودکار نمایش داده شود
             actionMessage: "مایل به دریافت نوتیفیکیشن‌های سایت ما هستید؟",
             acceptButtonText: "بله",
             cancelButtonText: "خیر"
@@ -19,12 +35,9 @@
       });
     });
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سایت آزمایشی</title>
 </head>
 <body>
-  <h1>خوش آمدید به سایت ما!</h1>
-  <p>این سایت برای تست ارسال نوتیفیکیشن استفاده می‌شود.</p>
+  <h1>خوش آمدید به پروژه نوتیفیکیشن!</h1>
+  <p>این سایت برای تست ارسال نوتیفیکیشن طراحی شده است.</p>
 </body>
 </html>
