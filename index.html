@@ -1,65 +1,30 @@
 <!DOCTYPE html>
 <html lang="fa">
-<head> 
-  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31", // App ID پروژه شما
-      safari_web_id: "", // اگر Safari Web Push فعال باشد، این را تنظیم کنید (اختیاری)
-      promptOptions: {
-        slidedown: {
-          enabled: true, // نمایش درخواست مجوز ارسال نوتیفیکیشن
-          autoPrompt: true, // به‌صورت خودکار نمایش داده شود
-          actionMessage: "مایل به دریافت نوتیفیکیشن‌های سایت ما هستید؟",
-          acceptButtonText: "بله",
-          cancelButtonText: "خیر"
-        }
-      }
-    });
-  });
-</script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>پروژه اطلاع‌رسانی دارویی</title>
-
-  <!-- کد جاوااسکریپت OneSignal -->
+<head>
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
     OneSignalDeferred.push(async function(OneSignal) {
       await OneSignal.init({
         appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31", // App ID شما
+        promptOptions: {
+          slidedown: {
+            enabled: true, // فعال کردن پیغام کشویی
+            autoPrompt: true, // درخواست اجازه به صورت خودکار نمایش داده شود
+            actionMessage: "مایل به دریافت نوتیفیکیشن‌های سایت ما هستید؟",
+            acceptButtonText: "بله",
+            cancelButtonText: "خیر"
+          }
+        }
       });
     });
   </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سایت آزمایشی</title>
 </head>
-<body style="background-color: #f8f8f8; font-family: Arial, sans-serif; color: #333; padding: 20px;">
-    <h1 style="text-align: center; color: #4CAF50;">پروژه اطلاع‌رسانی دارویی</h1>
-    <p style="text-align: center; font-size: 18px; color: #555;">این سایت برای ارسال نوتیفیکیشن‌های مربوط به داروها طراحی شده است. هدف از این پروژه، یادآوری مصرف دارو به کاربران است تا اطمینان حاصل شود که هیچ دارویی فراموش نمی‌شود. با استفاده از این سرویس، شما می‌توانید به راحتی از زمان مصرف داروهای خود آگاه شوید.</p>
-    
-    <h3>ویژگی‌های پروژه:</h3>
-    <ul>
-        <li>ارسال نوتیفیکیشن‌های یادآوری دارو به کاربران.</li>
-        <li>امکان ثبت شماره تلفن و نام برای ارسال نوتیفیکیشن‌های شخصی.</li>
-        <li>امکان درخواست مجوز دریافت نوتیفیکیشن از طریق سایت.</li>
-        <li>مناسب برای بیماران، پزشکان و داروخانه‌ها.</li>
-    </ul>
-    
-    <h3>روش استفاده:</h3>
-    <p>برای شروع، نام و شماره تلفن خود را وارد کنید تا نوتیفیکیشن‌های دارویی برای شما ارسال شود.</p>
-    
-    <!-- فرم برای وارد کردن اطلاعات کاربر -->
-    <form id="userForm" style="max-width: 500px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-        <label for="name" style="font-size: 16px; margin-bottom: 8px;">نام کامل:</label>
-        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 4px; border: 1px solid #ddd;">
-        
-        <label for="phone" style="font-size: 16px; margin-bottom: 8px;">شماره تلفن:</label>
-        <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 4px; border: 1px solid #ddd;">
-        
-        <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">ثبت</button>
-    </form>
+<body>
+  <h1>خوش آمدید به سایت ما!</h1>
+  <p>این سایت برای تست ارسال نوتیفیکیشن استفاده می‌شود.</p>
 </body>
 </html>
