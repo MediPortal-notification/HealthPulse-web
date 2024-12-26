@@ -35,9 +35,89 @@
       });
     });
   </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      width: 300px;
+      margin-top: 20px;
+    }
+    input[type="text"], input[type="tel"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+
 </head>
 <body>
   <h1>خوش آمدید به پروژه نوتیفیکیشن!</h1>
   <p>این سایت برای تست ارسال نوتیفیکیشن طراحی شده است.</p>
+
+  <div class="form-container">
+    <h2>اطلاعات خود را وارد کنید</h2>
+    <form id="userForm">
+      <label for="name">نام کامل:</label>
+      <input type="text" id="name" name="name" required placeholder="نام خود را وارد کنید" />
+
+      <label for="phone">شماره تلفن:</label>
+      <input type="tel" id="phone" name="phone" required placeholder="شماره تلفن خود را وارد کنید" />
+
+      <label for="description">توضیحات:</label>
+      <textarea id="description" name="description" rows="4" placeholder="توضیحات خود را وارد کنید"></textarea>
+
+      <button type="submit">ارسال اطلاعات</button>
+    </form>
+  </div>
+
+  <script>
+    // کد ارسال اطلاعات فرم
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // دریافت اطلاعات از فرم
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const description = document.getElementById('description').value;
+
+      // نمایش پیام به کاربر
+      alert(`اطلاعات شما:\nنام: ${name}\nشماره تلفن: ${phone}\nتوضیحات: ${description}`);
+
+      // در اینجا می‌توانید اطلاعات را به یک API ارسال کنید یا در محلی ذخیره کنید.
+      // برای مثال:
+      // const data = { name, phone, description };
+      // fetch('API_URL', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(data)
+      // });
+    });
+  </script>
+
 </body>
 </html>
