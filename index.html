@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="fa">
-<head> 
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سایت آزمایشی</title>
+  
+  <!-- لینک به فونت ایرانی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
 
   <!-- کد جاوااسکریپت OneSignal -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
@@ -12,13 +15,103 @@
     OneSignalDeferred.push(async function(OneSignal) {
       await OneSignal.init({
         appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31", // App ID شما
+        safari_web_id: "web.safari.push", // Safari Web Push ID
+        promptOptions: {
+          slidedown: {
+            enabled: true, // نمایش درخواست مجوز ارسال نوتیفیکیشن
+            autoPrompt: true, // به‌صورت خودکار نمایش داده شود
+            actionMessage: "مایل به دریافت نوتیفیکیشن‌های سایت ما هستید؟",
+            acceptButtonText: "بله",
+            cancelButtonText: "خیر"
+          }
+        }
       });
     });
   </script>
+
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #4CAF50;
+      margin-top: 50px;
+    }
+    p {
+      font-size: 18px;
+    }
+    .container {
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #2196F3;
+    }
+  </style>
 </head>
 <body>
-    <h1>سلام، این یک سایت آزمایشی است!</h1>
-    <p>این سایت برای تست ارسال نوتیفیکیشن استفاده می‌شود.</p>
+
+  <h1>سلام، خوش آمدید به سایت ما!</h1>
+  <p>لطفاً نام و شماره تلفن خود را وارد کنید تا به شما خوش آمد بگوییم.</p>
+  
+  <!-- فرم وارد کردن نام و شماره تلفن -->
+  <div class="container">
+    <form id="welcomeForm">
+      <input type="text" id="name" placeholder="نام شما" required>
+      <input type="tel" id="phone" placeholder="شماره تلفن" required>
+      <button type="submit">ارسال</button>
+    </form>
+  </div>
+
+  <div class="message" id="welcomeMessage" style="display: none;"></div>
+
+  <script>
+    // نمایش پیام خوش آمدگویی پس از وارد کردن اطلاعات
+    document.getElementById("welcomeForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      
+      if(name && phone) {
+        document.getElementById("welcomeMessage").style.display = "block";
+        document.getElementById("welcomeMessage").textContent = `خوش آمدید ${name} عزیز! شماره شما: ${phone} ثبت شد.`;
+      } else {
+        alert("لطفاً تمام فیلدها را پر کنید.");
+      }
+    });
+  </script>
+
 </body>
 </html>
-
