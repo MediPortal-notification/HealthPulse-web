@@ -6,16 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>پروژه نوتیفیکیشن</title>
   
-  <!-- کد وان سیگنال -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-  <script>
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function(OneSignal) {
-      await OneSignal.init({
-        appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31", // App ID پروژه شما
-      });
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "d63f7eeb-e73c-42f1-a910-ffba4bcc2e31",
     });
-  </script>
+  });
+</script>
   
   <!-- کد اضافه‌شده برای درخواست مجوز نوتیفیکیشن -->
   <script>
